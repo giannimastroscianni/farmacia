@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-    <title>Inserisci Farmaco Brevettato</title>
+    <title>Inserisci Farmaco Generico</title>
     <style>
         table {
         font-family: arial, sans-serif;
@@ -67,8 +67,6 @@
 
 
 
-
-
     </style>
 </head>
 <body>
@@ -86,7 +84,7 @@
 
 
 <div id="theform" style="margin-bottom: 10px" align="center">
-    <form action="insBrevettato" method="post">
+    <form action="insGenerico" method="post">
         {% csrf_token %}
         <p>Inserisci ID<input type="text" id="id" name="id" value="{{id}}"
                               style="margin-left: 5px" required>
@@ -109,13 +107,17 @@
                                          value="{{prescrivibile}}"
                                          style="margin-left: 5px" required>
 
-        <p>Inserisci Durata Brevetto<input type="date" min="2017-07-07" id="durata" name="durata" value="{{durata}}"
-                                           style="margin-left: 5px" required>
+        <p>Inserisci Farmaco Generico Associato <select name="brevettato" id="brevettato" value="{{brevettato}}"
+                                                        required>
+            {% for brevettato in brevettati %}
+            <option>{{brevettato.get_id}}</option>
+            {% endfor %}
+        </select>
 
             <input id="mybtn"
                    type="submit"
                    class="btn btn-success"
-                   value="Inserisci Farmaco Brevettato"
+                   value="Inserisci Farmaco Generico"
                    style="margin-left: 5px">
         </p>
     </form>

@@ -190,11 +190,89 @@ def insert_brevettato(request):
             recapito_casa = casa[pos + 1:-1]
             prescrivibile = request.POST.get('prescrivibile')
             durata = request.POST.get('durata')
-            print durata
             dao.insert_brevettato(id, nome, descrizione, nome_casa, recapito_casa, prescrivibile, durata)
     except:
         traceback.print_exc()
     return render(request, 'farmacia/insbrev.html', context=dic)
+
+
+def insert_generico(request):
+    try:
+        dao = models.Dao()
+        case = dao.get_case()
+        brevettati = dao.get_brevettati()
+        dic = {'case': case, 'brevettati': brevettati}
+        if request.method == "POST":
+            id = request.POST.get('id')
+            nome = request.POST.get('nome')
+            descrizione = request.POST.get('descrizione')
+            casa = request.POST.get('casa')
+            pos = casa.index(',')
+            nome_casa = casa[1:pos]
+            recapito_casa = casa[pos + 1:-1]
+            prescrivibile = request.POST.get('prescrivibile')
+            brevettato = request.POST.get('brevettato')
+            dao.insert_generico(id, nome, descrizione, nome_casa, recapito_casa, prescrivibile, brevettato)
+    except:
+        traceback.print_exc()
+    return render(request, 'farmacia/insgen.html', context=dic)
+
+
+def insert_cosmetico(request):
+    try:
+        dao = models.Dao()
+        case = dao.get_case()
+        dic = {'case': case}
+        if request.method == "POST":
+            id = request.POST.get('id')
+            nome = request.POST.get('nome')
+            descrizione = request.POST.get('descrizione')
+            casa = request.POST.get('casa')
+            pos = casa.index(',')
+            nome_casa = casa[1:pos]
+            recapito_casa = casa[pos + 1:-1]
+            dao.insert_cosmetico(id, nome, descrizione, nome_casa, recapito_casa)
+    except:
+        traceback.print_exc()
+    return render(request, 'farmacia/inscosm.html', context=dic)
+
+
+def insert_igiene(request):
+    try:
+        dao = models.Dao()
+        case = dao.get_case()
+        dic = {'case': case}
+        if request.method == "POST":
+            id = request.POST.get('id')
+            nome = request.POST.get('nome')
+            descrizione = request.POST.get('descrizione')
+            casa = request.POST.get('casa')
+            pos = casa.index(',')
+            nome_casa = casa[1:pos]
+            recapito_casa = casa[pos + 1:-1]
+            dao.insert_igiene(id, nome, descrizione, nome_casa, recapito_casa)
+    except:
+        traceback.print_exc()
+    return render(request, 'farmacia/insig.html', context=dic)
+
+
+def insert_cura_bimbo(request):
+    try:
+        dao = models.Dao()
+        case = dao.get_case()
+        dic = {'case': case}
+        if request.method == "POST":
+            id = request.POST.get('id')
+            nome = request.POST.get('nome')
+            descrizione = request.POST.get('descrizione')
+            casa = request.POST.get('casa')
+            pos = casa.index(',')
+            nome_casa = casa[1:pos]
+            recapito_casa = casa[pos + 1:-1]
+            dao.insert_cura_bimbo(id, nome, descrizione, nome_casa, recapito_casa)
+    except:
+        traceback.print_exc()
+    return render(request, 'farmacia/inscurbim.html', context=dic)
 
 
 """

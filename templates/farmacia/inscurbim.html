@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-    <title>Cura Bimbo</title>
+    <title>Inserisci Cura Bimbo</title>
     <style>
         table {
         font-family: arial, sans-serif;
@@ -55,7 +55,15 @@
         background-color: #4CAF50;
     }
 
-
+    footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+}
     </style>
 </head>
 <body>
@@ -71,30 +79,33 @@
     </ul>
 </div>
 
-<div style="margin-bottom: 10px; margin-left: 10px">
-    <form action="insCuraBimbo">
-        <button name="inserisci_profumeria" style="margin-bottom: 10px">Inserisci</button>
-    </form>
-    <button name="profumeria" onclick="location.href='getProfumeria'">Torna ai Prodotti di Profumeria</button>
-</div>
 
-<div style="margin-bottom: 5px">
-    <table class="table table-striped">
-        <tr>
-            <th>Id</th>
-            <th>Nome</th>
-            <th>Descrizione</th>
-            <th>Casa Farmaceutica</th>
-        </tr>
-        {% for record in cura_bimbo %}
-        <tr>
-            <td>{{record.get_id}}</td>
-            <td>{{record.get_nome}}</td>
-            <td>{{record.get_descrizione}}</td>
-            <td>{{record.get_casa}}</td>
-        </tr>
-        {% endfor %}
-    </table>
+<div id="theform" style="margin-bottom: 10px" align="center">
+    <form action="insCuraBimbo" method="post">
+        {% csrf_token %}
+        <p>Inserisci ID<input type="text" id="id" name="id" value="{{id}}"
+                              style="margin-left: 5px" required>
+
+        <p>Inserisci Nome<input type="text" id="nome" name="nome" value="{{nome}}"
+                                style="margin-left: 5px" required>
+        <p>Inserisci Descrizione<input type="text" id="descrizione" name="descrizione" value="{{descrizione}}"
+                                       style="margin-left: 5px">
+        <p>Inserisci Casa Farmaceutica
+            <select name="casa" id="casa" value="{{casa}}" required>
+                {% for casa in case %}
+                <option>({{casa.get_nome}},{{casa.get_recapito}})</option>
+                {% endfor %}
+            </select>
+
+        </p>
+
+            <input id="mybtn"
+                   type="submit"
+                   class="btn btn-success"
+                   value="Inserisci Prodotto Cura Bimbo"
+                   style="margin-left: 5px">
+        </p>
+    </form>
 </div>
 
 <footer class="w3-container w3-padding-64 w3-light-grey w3-center">

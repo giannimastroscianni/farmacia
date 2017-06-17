@@ -386,11 +386,36 @@ class Dao:
 
     def insert_brevettato(self, id, nome, descrizione, nome_casa, recapito_casa, prescrivibile, durata):
         cursor = self.con.cursor()
-        print nome_casa, recapito_casa
-        query = "insert into prodotto select brevettatoty(" + id + ", '" + nome + "', '" + descrizione + "', " \
-                "(select ref(c) from casa_farmaceutica c where c.nome='" + nome_casa + "' and c.recapito='" + recapito_casa + "'),"\
-                + prescrivibile + ",to_date('" + durata + "', 'yyyy-mm-dd')) from dual;"
-        print query
-        cursor.execute(query)
+        cursor.execute("insert into prodotto select brevettatoty(" + id + ", '" + nome + "', '" + descrizione + "', " \
+                                                                                                                "(select ref(c) from casa_farmaceutica c where c.nome='" + nome_casa + "' and c.recapito='" + recapito_casa + "')," \
+                       + prescrivibile + ",to_date('" + durata + "', 'yyyy-mm-dd')) from dual")
+        cursor.close()
+        self.con.commit()
+
+    def insert_generico(self, id, nome, descrizione, nome_casa, recapito_casa, prescrivibile, brevettato):
+        cursor = self.con.cursor()
+        cursor.execute(
+            "insert into prodotto select genericoty(" + id + ", '" + nome + "', '" + descrizione + "', (select ref(c) from casa_farmaceutica c where c.nome='" + nome_casa + "' and c.recapito='" + recapito_casa + "')," + prescrivibile + ", treat(ref(b) as ref brevettatoty)) from prodotto b where b.id = " + brevettato)
+        cursor.close()
+        self.con.commit()
+
+    def insert_cosmetico(self, id, nome, descrizione, nome_casa, recapito_casa):
+        cursor = self.con.cursor()
+        cursor.execute(
+            "insert into prodotto select cosmeticoty(" + id + ", '" + nome + "', '" + descrizione + "', (select ref(c) from casa_farmaceutica c where c.nome='" + nome_casa + "' and c.recapito='" + recapito_casa + "')) from dual")
+        cursor.close()
+        self.con.commit()
+
+    def insert_igiene(self, id, nome, descrizione, nome_casa, recapito_casa):
+        cursor = self.con.cursor()
+        cursor.execute(
+            "insert into prodotto select per_igienety(" + id + ", '" + nome + "', '" + descrizione + "', (select ref(c) from casa_farmaceutica c where c.nome='" + nome_casa + "' and c.recapito='" + recapito_casa + "')) from dual")
+        cursor.close()
+        self.con.commit()
+
+    def insert_cura_bimbo(self, id, nome, descrizione, nome_casa, recapito_casa):
+        cursor = self.con.cursor()
+        cursor.execute(
+            "insert into prodotto select cura_bimboty(" + id + ", '" + nome + "', '" + descrizione + "', (select ref(c) from casa_farmaceutica c where c.nome='" + nome_casa + "' and c.recapito='" + recapito_casa + "')) from dual")
         cursor.close()
         self.con.commit()
