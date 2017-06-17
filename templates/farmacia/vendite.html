@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Vendite</title>
+    </head>
+    <body>
+        <div>
+        {% if vendite %}
+            <h1>Vendite presenti nel database:</h1>
+        <ul>
+            {% for vendita in vendite %}
+                <li>{{ vendita }}</li>
+            {% endfor %}
+        </ul>
+        {% else %}
+            <strong>Non ci sono vendite.</strong>
+        {% endif %}
+            </div>
+    </body>
+</html>

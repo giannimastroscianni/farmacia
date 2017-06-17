@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Prescrizioni</title>
+    </head>
+    <body>
+        <div>
+        {% if prescrizioni %}
+            <h1>Prescrizioni presenti nel database:</h1>
+        <ul>
+            {% for prescrizione in prescrizioni %}
+                <li>{{ prescrizione }}</li>
+            {% endfor %}
+        </ul>
+        {% else %}
+            <strong>Non ci sono prescrizioni.</strong>
+        {% endif %}
+            </div>
+    </body>
+</html>

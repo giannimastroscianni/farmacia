@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <title>Igiene</title>
+<style>
+        table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        margin-left: 10px;
+    }
+
+    td, th {
+        border: 1px solid #4CAF50;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #4CAF50;
+    }
+    body {margin:0;}
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
+    li {
+        float: left;
+    }
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    li a:hover:not(.active) {
+        background-color: #111;
+    }
+
+    .active {
+        background-color: #4CAF50;
+    }
+
+    </style>
+</head>
+<body>
+<div style="margin-bottom: 100px">
+    <ul>
+        <li><a href="home">Home</a></li>
+        <li><a href="getPazienti">Pazienti</a></li>
+        <li><a href="getMedici">Medici</a></li>
+        <li><a href="getCase">Case Farmaceutiche</a></li>
+        <li><a class="active" href="getProdotti">Prodotti</a></li>
+        <li><a href="getVendite">Vendite</a></li>
+        <li><a href="getPrescrizioni">Prescrizioni</a></li>
+    </ul>
+</div>
+
+<div style="margin-bottom: 10px; margin-left: 10px">
+<button name="profumeria" onclick="location.href='getProfumeria'">Torna ai Prodotti di Profumeria</button>
+<button name="inserisci_profumeria">Inserisci</button>
+</div>
+
+<div style="margin-bottom: 5px">
+    <table class="table table-striped">
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Descrizione</th>
+            <th>Casa Farmaceutica</th>
+        </tr>
+        {% for record in igiene %}
+        <tr>
+            <td>{{record.get_id}}</td>
+            <td>{{record.get_nome}}</td>
+            <td>{{record.get_descrizione}}</td>
+            <td>{{record.get_casa}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<footer class="w3-container w3-padding-64 w3-light-grey w3-center">
+    <p>© 2017 by Gianni Mastroscianni</p>
+    <p>Università degli Studi di Bari "Aldo Moro" - Dipartimento di Informatica </p>
+</footer>
+
+
+</body>
+</html>
