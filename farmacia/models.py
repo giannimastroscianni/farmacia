@@ -340,16 +340,16 @@ class Dao:
 
     def get_vendite(self):
         cursor = self.con.cursor()
-        cursor.execute("select v.id, v.data "
-                       "from vendita v")  # aggiungere nested table
+        cursor.execute(
+            "select v.id, v.data, vv.prodotto.id, vv.qta from vendita v, table(v.prodotti) vv")
         rows = cursor.fetchall()
         to_return = []
         for row in rows:
             dat = row[1].strftime("%Y/%m/%d")
             date = dt.strptime(dat, "%Y/%m/%d").timetuple()
             data = (date[0], date[1], date[2])
-            t = (row[0], data)
-            to_return.append(t)
+            prodotto = (row[2], row[3])
+            to_return.append(Vendita(row[0], data, prodotto))
         cursor.close()
         return to_return
 
@@ -417,5 +417,15 @@ class Dao:
         cursor = self.con.cursor()
         cursor.execute(
             "insert into prodotto select cura_bimboty(" + id + ", '" + nome + "', '" + descrizione + "', (select ref(c) from casa_farmaceutica c where c.nome='" + nome_casa + "' and c.recapito='" + recapito_casa + "')) from dual")
+        cursor.close()
+        self.con.commit()
+
+    def insert_vendita(self, id, data, prodotti):
+        cursor = self.con.cursor()
+        query = "insert into vendita select venditaty(" + id + ", to_date('" + data + "', 'yyyy-mm-dd'), ref_prodottint(" \
+                                                                                      "ref_prodottity((select ref(p) from prodotto p where p.id=" + \
+                prodotti['prodotto'] + ")," + prodotti['quantita'] + ")))from dual"   # inserire piu prodotti
+        print query
+        cursor.execute(query)
         cursor.close()
         self.con.commit()

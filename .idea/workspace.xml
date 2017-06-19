@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a84934cb-e7f7-44a5-b5b8-14889f6c21ec" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/farmacia/models.py" afterPath="$PROJECT_DIR$/farmacia/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/farmacia/urls.py" afterPath="$PROJECT_DIR$/farmacia/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/farmacia/views.py" afterPath="$PROJECT_DIR$/farmacia/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/farmacia/cosmetici.html" afterPath="$PROJECT_DIR$/templates/farmacia/cosmetici.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/farmacia/cura_bimbo.html" afterPath="$PROJECT_DIR$/templates/farmacia/cura_bimbo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/farmacia/generici.html" afterPath="$PROJECT_DIR$/templates/farmacia/generici.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/farmacia/igiene.html" afterPath="$PROJECT_DIR$/templates/farmacia/igiene.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/farmacia/insbrev.html" afterPath="$PROJECT_DIR$/templates/farmacia/insbrev.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/farmacia/vendite.html" afterPath="$PROJECT_DIR$/templates/farmacia/vendite.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,8 +20,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/farmacia/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="661">
-              <caret line="276" column="0" lean-forward="false" selection-start-line="276" selection-start-column="0" selection-end-line="276" selection-end-column="0" />
+            <state relative-caret-position="120">
+              <caret line="281" column="24" lean-forward="false" selection-start-line="281" selection-start-column="24" selection-end-line="281" selection-end-column="24" />
               <folding>
                 <element signature="e#24#63#0" expanded="true" />
               </folding>
@@ -37,8 +32,8 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/farmacia/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+            <state relative-caret-position="476">
+              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -49,38 +44,10 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/farmacia/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="545">
-              <caret line="415" column="22" lean-forward="true" selection-start-line="415" selection-start-column="22" selection-end-line="415" selection-end-column="22" />
+            <state relative-caret-position="297">
+              <caret line="426" column="70" lean-forward="false" selection-start-line="426" selection-start-column="70" selection-end-line="426" selection-end-column="70" />
               <folding>
                 <element signature="e#24#63#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="inscurbim.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/farmacia/inscurbim.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="104" column="55" lean-forward="false" selection-start-line="104" selection-start-column="55" selection-end-line="104" selection-end-column="55" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#p#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#p#1;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#p#2;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cura_bimbo.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/farmacia/cura_bimbo.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="76" column="11" lean-forward="false" selection-start-line="76" selection-start-column="11" selection-end-line="76" selection-end-column="11" />
-              <folding>
-                <element signature="n#style#0;n#button#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -89,8 +56,8 @@
       <file leaf-file-name="inscosm.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/farmacia/inscosm.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="71" column="40" lean-forward="true" selection-start-line="71" selection-start-column="40" selection-end-line="71" selection-end-column="40" />
+            <state relative-caret-position="66">
+              <caret line="67" column="7" lean-forward="true" selection-start-line="67" selection-start-column="7" selection-end-line="67" selection-end-column="7" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#0;n#p#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -105,10 +72,48 @@
       <file leaf-file-name="cosmetici.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/farmacia/cosmetici.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
-              <caret line="76" column="11" lean-forward="false" selection-start-line="76" selection-start-column="11" selection-end-line="76" selection-end-column="11" />
+            <state relative-caret-position="-189">
+              <caret line="55" column="5" lean-forward="true" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
               <folding>
                 <element signature="n#style#0;n#button#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="insbrev.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/farmacia/insbrev.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="491">
+              <caret line="100" column="67" lean-forward="false" selection-start-line="100" selection-start-column="67" selection-end-line="100" selection-end-column="67" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="vendite.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/farmacia/vendite.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="55" column="5" lean-forward="false" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+              <folding>
+                <element signature="n#style#0;n#button#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="insven.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/farmacia/insven.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="409">
+              <caret line="107" column="12" lean-forward="true" selection-start-line="107" selection-start-column="12" selection-end-line="107" selection-end-column="12" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#p#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#p#1;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#p#2;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -142,7 +147,6 @@
         <option value="$PROJECT_DIR$/templates/farmacia/index" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/bdii/urls.py" />
-        <option value="$PROJECT_DIR$/templates/farmacia/vendite.html" />
         <option value="$PROJECT_DIR$/templates/farmacia/prescrizioni.html" />
         <option value="$PROJECT_DIR$/templates/farmacia/prodott.html" />
         <option value="$PROJECT_DIR$/templates/farmacia/showhide.js" />
@@ -169,7 +173,9 @@
         <option value="$PROJECT_DIR$/templates/farmacia/igiene.html" />
         <option value="$PROJECT_DIR$/templates/farmacia/inscurbim.html" />
         <option value="$PROJECT_DIR$/templates/farmacia/cura_bimbo.html" />
+        <option value="$PROJECT_DIR$/templates/farmacia/vendite.html" />
         <option value="$PROJECT_DIR$/farmacia/urls.py" />
+        <option value="$PROJECT_DIR$/templates/farmacia/insven.html" />
         <option value="$PROJECT_DIR$/farmacia/models.py" />
         <option value="$PROJECT_DIR$/farmacia/views.py" />
       </list>
@@ -459,17 +465,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/farmacia/brevettati.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="75" column="68" lean-forward="false" selection-start-line="75" selection-start-column="68" selection-end-line="75" selection-end-column="68" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#button#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/farmacia/inspaz.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1462">
@@ -658,13 +653,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/farmacia/vendite.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="39" lean-forward="false" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -776,22 +764,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/farmacia/insbrev.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="542">
-          <caret line="100" column="67" lean-forward="false" selection-start-line="100" selection-start-column="67" selection-end-line="100" selection-end-column="67" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#input#0;n#p#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#input#0;n#p#1;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#input#0;n#p#2;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#input#0;n#p#4;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#input#0;n#p#5;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#input#1;n#p#5;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/farmacia/brevettati.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="423">
@@ -828,26 +800,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/farmacia/cosmetici.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="76" column="11" lean-forward="false" selection-start-line="76" selection-start-column="11" selection-end-line="76" selection-end-column="11" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/farmacia/insig.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="697">
           <caret line="104" column="45" lean-forward="false" selection-start-line="104" selection-start-column="45" selection-end-line="104" selection-end-column="45" />
           <folding>
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#p#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#p#1;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#p#2;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#input#0;n#p#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#input#0;n#p#1;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#input#0;n#p#2;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#input#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -857,21 +819,7 @@
         <state relative-caret-position="338">
           <caret line="71" column="6" lean-forward="true" selection-start-line="71" selection-start-column="6" selection-end-line="71" selection-end-column="6" />
           <folding>
-            <element signature="n#style#0;n#button#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/farmacia/inscosm.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="71" column="40" lean-forward="true" selection-start-line="71" selection-start-column="40" selection-end-line="71" selection-end-column="40" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#p#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#p#1;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#p#2;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -881,11 +829,11 @@
         <state relative-caret-position="544">
           <caret line="104" column="55" lean-forward="false" selection-start-line="104" selection-start-column="55" selection-end-line="104" selection-end-column="55" />
           <folding>
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#p#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#p#1;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#p#2;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#input#0;n#p#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#input#0;n#p#1;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#input#0;n#p#2;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#input#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -895,15 +843,47 @@
         <state relative-caret-position="338">
           <caret line="76" column="11" lean-forward="false" selection-start-line="76" selection-start-column="11" selection-end-line="76" selection-end-column="11" />
           <folding>
+            <element signature="n#style#0;n#button#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/farmacia/cosmetici.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-189">
+          <caret line="55" column="5" lean-forward="true" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+          <folding>
             <element signature="n#style#0;n#button#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/farmacia/inscosm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="67" column="7" lean-forward="true" selection-start-line="67" selection-start-column="7" selection-end-line="67" selection-end-column="7" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#p#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#p#1;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#p#2;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/farmacia/insbrev.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="491">
+          <caret line="100" column="67" lean-forward="false" selection-start-line="100" selection-start-column="67" selection-end-line="100" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/farmacia/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        <state relative-caret-position="476">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
@@ -912,18 +892,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/farmacia/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="415" column="22" lean-forward="true" selection-start-line="415" selection-start-column="22" selection-end-line="415" selection-end-column="22" />
+        <state relative-caret-position="297">
+          <caret line="426" column="70" lean-forward="false" selection-start-line="426" selection-start-column="70" selection-end-line="426" selection-end-column="70" />
           <folding>
             <element signature="e#24#63#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/farmacia/vendite.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="55" column="5" lean-forward="false" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/farmacia/insven.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="107" column="12" lean-forward="true" selection-start-line="107" selection-start-column="12" selection-end-line="107" selection-end-column="12" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#p#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#p#1;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#p#2;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/farmacia/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="661">
-          <caret line="276" column="0" lean-forward="false" selection-start-line="276" selection-start-column="0" selection-end-line="276" selection-end-column="0" />
+        <state relative-caret-position="120">
+          <caret line="281" column="24" lean-forward="false" selection-start-line="281" selection-start-column="24" selection-end-line="281" selection-end-column="24" />
           <folding>
             <element signature="e#24#63#0" expanded="true" />
           </folding>

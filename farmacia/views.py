@@ -275,6 +275,23 @@ def insert_cura_bimbo(request):
     return render(request, 'farmacia/inscurbim.html', context=dic)
 
 
+def insert_vendita(request):
+    try:
+        dao = models.Dao()
+        prodotti = dao.get_prodotti()
+        dic = {'prodotti': prodotti}
+        if request.method == "POST":
+            id = request.POST.get('id')
+            data = request.POST.get('data')
+            prodotto = request.POST.get('prodotto')
+            quantita = request.POST.get('qta')
+            prodotti = {'prodotto': prodotto, 'quantita':quantita}
+            dao.insert_vendita(id, data, prodotti)
+    except:
+        traceback.print_exc()
+    return render(request, 'farmacia/insven.html', context=dic)
+
+
 """
 def prova(request):
     try:

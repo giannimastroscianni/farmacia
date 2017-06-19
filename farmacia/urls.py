@@ -25,5 +25,6 @@ urlpatterns = [
     url(r'insCosmetico', views.insert_cosmetico, name='insert_cosmetico'),
     url(r'insIgiene', views.insert_igiene, name='insert_igiene'),
     url(r'insCuraBimbo', views.insert_cura_bimbo, name='insert_cura_bimbo'),
+    url(r'insVendita', views.insert_vendita, name='insert_vendita'),
 
 ]
