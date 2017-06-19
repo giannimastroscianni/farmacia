@@ -16,7 +16,7 @@ urlpatterns = [
     url(r'getIgiene', views.get_igiene, name='get_igiene'),
     url(r'getCuraBimbo', views.get_cura_bimbo, name='get_cura_bimbo'),
     url(r'getPrescrizioni', views.get_prescrizioni, name='get_prescrizioni'),
-    # url(r'prova',views.prova, name='prova'),
+    url(r'prova',views.prova, name='prova'),
     url(r'insPaziente', views.insert_paziente, name='insert_paziente'),
     url(r'insMedico', views.insert_medico, name='insert_medico'),
     url(r'insCasa', views.insert_casa, name='insert_casa'),
@@ -26,5 +26,5 @@ urlpatterns = [
     url(r'insIgiene', views.insert_igiene, name='insert_igiene'),
     url(r'insCuraBimbo', views.insert_cura_bimbo, name='insert_cura_bimbo'),
     url(r'insVendita', views.insert_vendita, name='insert_vendita'),
-
+    url(r'insPrescrizione', views.insert_prescrizione, name='insert_prescrizione'),
 ]

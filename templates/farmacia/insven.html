@@ -64,6 +64,7 @@
   background-color: #efefef;
   text-align: center;
 }
+
     </style>
 </head>
 <body>
@@ -89,23 +90,14 @@
         <p>Inserisci Data<input type="date" max="2017-07-07" id="data" name="data" value="{{data}}"
                                 style="margin-left: 5px" required>
 
-        <p>Inserisci numero prodotti acquistati<input type="number" min="1" id="num" name="num" value="{{num}}" style="margin-left: 5px" required>
-
-        <p>Inserisci Prodotto
-            <select name="prodotto" id="prodotto" value="{{prodotto}}" required>
-                {% for prodotto in prodotti %}
-                <option>{{prodotto.get_id}}</option>
-                {% endfor %}
-            </select>
-        </p>
-        <p>Inserisci quantità <input type="number" id="qta" name="qta" min="1" value="{{qta}}" required></p>
-
-            <input id="mybtn"
-                   type="submit"
-                   class="btn btn-success"
-                   value="Inserisci Vendita"
-                   style="margin-left: 5px">
-        </p>
+        <p>Inserisci acquisti nel formato IDProdottoXQuantità. Ogni acquisto deve essere separato da uno spazio
+        <input type="text" id="acquisti" name="acquisti" value="{{acquisti}}" style="margin-bottom: 10px" required>
+</p>
+        <input id="mybtn"
+               type="submit"
+               class="btn btn-success"
+               value="Inserisci Vendita"
+               style="margin-left: 5px">
     </form>
 </div>
 

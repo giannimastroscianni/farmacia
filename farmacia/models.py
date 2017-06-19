@@ -355,14 +355,12 @@ class Dao:
 
     def get_prescrizioni(self):
         cursor = self.con.cursor()
-        cursor.execute("select p.id,"
-                       "deref(p.medico).cod,"
-                       "deref(p.paziente).cf "
-                       "from prescrizione p")  # aggiungere nested table
+        cursor.execute(
+            "select p.id, deref(p.paziente).cod, deref(p.medico).cf, deref(p.vendita).id, pp.farmaco.id from prescrizione p, table(p.farmaci) pp")
         rows = cursor.fetchall()
         to_return = []
         for row in rows:
-            to_return.append(row)
+            to_return.append(Prescrizione(row[0], row[1], row[2], row[3], row[4]))
         cursor.close()
         return to_return
 
@@ -420,11 +418,39 @@ class Dao:
         cursor.close()
         self.con.commit()
 
-    def insert_vendita(self, id, data, prodotti):
+    def insert_vendita(self, id, data, acquisti):
         cursor = self.con.cursor()
-        query = "insert into vendita select venditaty(" + id + ", to_date('" + data + "', 'yyyy-mm-dd'), ref_prodottint(" \
-                                                                                      "ref_prodottity((select ref(p) from prodotto p where p.id=" + \
-                prodotti['prodotto'] + ")," + prodotti['quantita'] + ")))from dual"   # inserire piu prodotti
+        query = "insert into vendita select venditaty(" + id + ", to_date('" + data + "', 'yyyy-mm-dd'), ref_prodottint("
+        acquisti = acquisti.split()
+        for i in range(len(acquisti)):
+            pos = acquisti[i].index('x')
+            sub_query = "ref_prodottity((select ref(p) from prodotto p where p.id=" + acquisti[i][:pos] + ")," + \
+                        acquisti[i][
+                        pos + 1:] + ")"
+            query += sub_query
+            if i != (len(acquisti) - 1):
+                query += ","
+        query += "))from dual"
+        print query
+        cursor.execute(query)
+        cursor.close()
+        self.con.commit()
+
+    def insert_prescrizione(self, id, paziente, medico, vendita, farmaci):
+        cursor = self.con.cursor()
+        query = "insert into prescrizione select prescrizionety(" + id + ","
+        query += "(select ref(p) from paziente p where p.cf = " + paziente + ","
+        query += "(select ref(m) from medico m where m.cod = " + medico + ","
+        query += "(select ref(v) from vendita v where v.id = " + vendita + ", ref_farmacint("
+
+        farmaci = farmaci.split(",")
+        for i in range(len(farmaci)):
+            sub_query = "ref_farmacity((select treat(ref(f) as ref farmacoty) from prodotto f where f.id = " + farmaci[
+                i] + " and value(f) is of type(farmacoty)))"
+            query += sub_query
+            if i != (len(farmaci) - 1):
+                query += ","
+        query += "))from dual"
         print query
         cursor.execute(query)
         cursor.close()

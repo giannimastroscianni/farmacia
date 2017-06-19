@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-    <title>Prescrizioni</title>
+    <title>Inserisci Prescrizione</title>
     <style>
         table {
         font-family: arial, sans-serif;
@@ -55,6 +55,16 @@
         background-color: #4CAF50;
     }
 
+    footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+}
+
     </style>
 </head>
 <body>
@@ -70,31 +80,47 @@
     </ul>
 </div>
 
-<div style="margin-bottom: 10px; margin-left: 10px">
-    <form action="insPrescrizione">
-        <button name="inserisci_prescrizione" style="margin-bottom: 10px">Inserisci</button>
-    </form>
-</div>
 
-<div style="margin-bottom: 5px">
-    <table class="table table-striped">
-        <tr>
-            <th>Id</th>
-            <th>Paziente</th>
-            <th>Medico</th>
-            <th>Vendita</th>
-            <th>Farmaco</th>
-        </tr>
-        {% for record in prescrizioni %}
-        <tr>
-            <td>{{record.get_id}}</td>
-            <td>{{record.get_paziente}}</td>
-            <td>{{record.get_medico}}</td>
-            <td>{{record.get_vendita}}</td>
-            <td>{{record.get_farmaci}}</td>
-        </tr>
-        {% endfor %}
-    </table>
+<div id="theform" style="margin-bottom: 10px" align="center">
+    <form action="insPrescrizione" method="post">
+        {% csrf_token %}
+        <p>Inserisci ID<input type="text" id="id" name="id" value="{{id}}"
+                              style="margin-left: 5px" required>
+
+       <p>Inserisci Paziente
+            <select name="paziente" id="paziente" value="{{paziente}}" required>
+                {% for paziente in pazienti %}
+                <option>{{paziente.get_cf}}</option>
+                {% endfor %}
+            </select>
+        </p>
+
+        <p>Inserisci Medico
+            <select name="medico" id="medico" value="{{medico}}" required>
+                {% for medico in medici %}
+                <option>{{medico.get_cod}}</option>
+                {% endfor %}
+            </select>
+        </p>
+
+        <p>Inserisci Vendita
+            <select name="vendita" id="vendita" value="{{vendita}}" required>
+                {% for vendita in vendite %}
+                <option>{{vendita.get_id}}</option>
+                {% endfor %}
+            </select>
+
+        </p>
+
+        <p>Inserisci farmaci nella prescrizione separati da virgola
+        <input type="text" id="farmaci" name="farmaci" value="{{farmaci}}" style="margin-bottom: 10px" required>
+</p>
+        <input id="mybtn"
+               type="submit"
+               class="btn btn-success"
+               value="Inserisci Prescrizione"
+               style="margin-left: 5px">
+    </form>
 </div>
 
 <footer class="w3-container w3-padding-64 w3-light-grey w3-center">

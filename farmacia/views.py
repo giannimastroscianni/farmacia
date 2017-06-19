@@ -278,28 +278,45 @@ def insert_cura_bimbo(request):
 def insert_vendita(request):
     try:
         dao = models.Dao()
+        if request.method == "POST":
+            id = request.POST.get('id')
+            data = request.POST.get('data')
+            acquisti = request.POST.get('acquisti')
+            dao.insert_vendita(id, data, acquisti)
+    except:
+        traceback.print_exc()
+    return render(request, 'farmacia/insven.html')
+
+
+def insert_prescrizione(request):
+    try:
+        dao = models.Dao()
+        pazienti = dao.get_pazienti()
+        medici = dao.get_medici()
+        vendite = dao.get_vendite()
+        dic = {'pazienti': pazienti, 'medici': medici, 'vendite': vendite}
+        if request.method == "POST":
+            id = request.POST.get('id')
+            paziente = request.POST.get('paziente')
+            medico = request.POST.get('medico')
+            vendita = request.POST.get('vendita')
+            farmaci = request.POST.get('farmaci')
+            dao.insert_prescrizione(id, paziente, medico, vendita, farmaci)
+    except:
+        traceback.print_exc()
+    return render(request, 'farmacia/inspre.html', context=dic)
+
+
+def prova(request):
+    try:
+        dao = models.Dao()
         prodotti = dao.get_prodotti()
         dic = {'prodotti': prodotti}
         if request.method == "POST":
             id = request.POST.get('id')
             data = request.POST.get('data')
-            prodotto = request.POST.get('prodotto')
-            quantita = request.POST.get('qta')
-            prodotti = {'prodotto': prodotto, 'quantita':quantita}
-            dao.insert_vendita(id, data, prodotti)
+            acquisti = request.POST.get('acquisti')
+            print id, data, acquisti
     except:
         traceback.print_exc()
-    return render(request, 'farmacia/insven.html', context=dic)
-
-
-"""
-def prova(request):
-    try:
-        dao = models.Dao()
-        if request.method == "POST":
-            cf = request.POST.get('cf')
-            dao.insert_paziente(cf)
-    except:
-        traceback.print_exc()
-    return render(request, 'farmacia/test.html')
-"""
+    return render(request, 'farmacia/test.html', context=dic)

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-    <title>Pazienti</title>
+    <title>Inserisci Vendita</title>
     <style>
-    table {
+        table {
         font-family: arial, sans-serif;
         border-collapse: collapse;
         width: 100%;
@@ -55,12 +55,15 @@
         background-color: #4CAF50;
     }
 
-
-
-
-
-
-
+    footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+}
 
     </style>
 </head>
@@ -68,40 +71,33 @@
 <div style="margin-bottom: 100px">
     <ul>
         <li><a href="home">Home</a></li>
-        <li><a class="active" href="getPazienti">Pazienti</a></li>
+        <li><a href="getPazienti">Pazienti</a></li>
         <li><a href="getMedici">Medici</a></li>
         <li><a href="getCase">Case Farmaceutiche</a></li>
         <li><a href="getProdotti">Prodotti</a></li>
-        <li><a href="getVendite">Vendite</a></li>
+        <li><a class="active" href="getVendite">Vendite</a></li>
         <li><a href="getPrescrizioni">Prescrizioni</a></li>
     </ul>
 </div>
 
-<div id="visible">
-    <button name="inserisci_paziente" onclick="swapform();">Inserisci</button>
-</div>
 
-
-<script>
-function swapform() {
-    var visible
-    var hidden
-    visible = document.getElementById("visible").innerHTML;
-    hidden = document.getElementById("theform").innerHTML;
-    document.getElementById("visible").innerHTML = hidden;
-}
-
-
-</script>
-
-<div id="theform" style="visibility: hidden; margin-bottom: 10px">
-    <form action="farmacia/getPazienti/" method="post">
+<div id="theform" style="margin-bottom: 10px" align="center">
+    <form action="prova" method="post">
         {% csrf_token %}
-        <p style="margin-right: 5px">Inserisci Codice Fiscale<input type="text" id="cf" name="cf" value="{{cf}}"
-                                                                    style="margin-right: 5px" required><input
-                id="mybtn" type="submit" class="btn btn-success"
-                value="Inserisci Paziente">
-        </p>
+        <p>Inserisci ID<input type="text" id="id" name="id" value="{{id}}"
+                              style="margin-left: 5px" required>
+
+        <p>Inserisci Data<input type="date" max="2017-07-07" id="data" name="data" value="{{data}}"
+                                style="margin-left: 5px" required>
+
+        <p>Inserisci acquisti nel formato IDProdottoXQuantità. Ogni acquisto deve essere separato da uno spazio</p>
+        <input type="text" id="acquisti" name="acquisti" value="{{acquisti}}" style="margin-bottom: 10px" required>
+
+        <input id="mybtn"
+               type="submit"
+               class="btn btn-success"
+               value="Inserisci Vendita"
+               style="margin-left: 5px">
     </form>
 </div>
 
