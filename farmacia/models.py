@@ -148,10 +148,11 @@ class Vendita:
 
 
 class Prescrizione:
-    def __init__(self, id, medico, paziente, farmaci):
+    def __init__(self, id, medico, paziente, vendita, farmaci):
         self.id = id
         self.medico = medico
         self.paziente = paziente
+        self.vendita = vendita
         self.farmaci = farmaci
 
     def get_id(self):
@@ -162,6 +163,9 @@ class Prescrizione:
 
     def get_paziente(self):
         return self.paziente
+
+    def get_vendita(self):
+        return self.vendita
 
     def get_farmaci(self):
         return self.farmaci
@@ -356,7 +360,7 @@ class Dao:
     def get_prescrizioni(self):
         cursor = self.con.cursor()
         cursor.execute(
-            "select p.id, deref(p.paziente).cod, deref(p.medico).cf, deref(p.vendita).id, pp.farmaco.id from prescrizione p, table(p.farmaci) pp")
+            "select p.id, deref(p.paziente).cf, deref(p.medico).cod, deref(p.vendita).id, deref(pp.farmaci).id from prescrizione p, table(p.farmaci) pp")
         rows = cursor.fetchall()
         to_return = []
         for row in rows:
@@ -439,9 +443,9 @@ class Dao:
     def insert_prescrizione(self, id, paziente, medico, vendita, farmaci):
         cursor = self.con.cursor()
         query = "insert into prescrizione select prescrizionety(" + id + ","
-        query += "(select ref(p) from paziente p where p.cf = " + paziente + ","
-        query += "(select ref(m) from medico m where m.cod = " + medico + ","
-        query += "(select ref(v) from vendita v where v.id = " + vendita + ", ref_farmacint("
+        query += "(select ref(p) from paziente p where p.cf = '" + paziente + "'),"
+        query += "(select ref(m) from medico m where m.cod = '" + medico + "'),"
+        query += "(select ref(v) from vendita v where v.id = " + vendita + "), ref_farmacint("
 
         farmaci = farmaci.split(",")
         for i in range(len(farmaci)):
