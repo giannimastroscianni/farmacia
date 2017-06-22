@@ -423,22 +423,26 @@ class Dao:
         self.con.commit()
 
     def insert_vendita(self, id, data, acquisti):
-        cursor = self.con.cursor()
-        query = "insert into vendita select venditaty(" + id + ", to_date('" + data + "', 'yyyy-mm-dd'), ref_prodottint("
-        acquisti = acquisti.split()
-        for i in range(len(acquisti)):
-            pos = acquisti[i].index('x')
-            sub_query = "ref_prodottity((select ref(p) from prodotto p where p.id=" + acquisti[i][:pos] + ")," + \
-                        acquisti[i][
-                        pos + 1:] + ")"
-            query += sub_query
-            if i != (len(acquisti) - 1):
-                query += ","
-        query += "))from dual"
-        print query
-        cursor.execute(query)
-        cursor.close()
-        self.con.commit()
+        try:
+            cursor = self.con.cursor()
+            query = "insert into vendita select venditaty(" + id + ", to_date('" + data + "', 'yyyy-mm-dd'), ref_prodottint("
+            acquisti = acquisti.split()
+            for i in range(len(acquisti)):
+                pos = acquisti[i].index('x')
+                p_id = acquisti[i][:pos]
+                qta = acquisti[i][pos + 1:]
+                if self._check_prodotto(p_id) and qta > 0:
+                    sub_query = "ref_prodottity((select ref(p) from prodotto p where p.id=" + p_id + ")," + qta + ")"
+                    query += sub_query
+                    if i != (len(acquisti) - 1):
+                        query += ","
+            query += "))from dual"
+            print query
+            cursor.execute(query)
+            cursor.close()
+            self.con.commit()
+        except:
+            traceback.print_exc()
 
     def insert_prescrizione(self, id, paziente, medico, vendita, farmaci):
         cursor = self.con.cursor()
@@ -459,3 +463,18 @@ class Dao:
         cursor.execute(query)
         cursor.close()
         self.con.commit()
+
+    def get_distinct_vendite(self):
+        cursor = self.con.cursor()
+        cursor.execute("select distinct id from vendita")
+        rows = cursor.fetchall()
+        to_return = []
+        for row in rows:
+            to_return.append(row[0])
+        cursor.close()
+        return to_return
+
+    def _check_prodotto(self, id):
+        ids = [i.get_id() for i in self.get_prodotti()]
+        ids = list(ids)
+        return id in ids

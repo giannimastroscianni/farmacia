@@ -6,11 +6,8 @@ except:
     print "Connection refused"
 
 cursor = con.cursor()
-cursor.execute("select * from paziente")
-rows = cursor.fetchall()
-to_return = []
-for row in rows:
-    to_return.append(row)
+cursor.execute("insert into vendita select venditaty(46, to_date('2017-06-14', 'yyyy-mm-dd'), ref_prodottint(ref_prodottity((select ref(p) from prodotto p where p.id=100),2)))from dual")
 cursor.close()
+con.commit()
 con.close()
-print to_return
+

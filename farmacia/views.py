@@ -293,7 +293,7 @@ def insert_prescrizione(request):
         dao = models.Dao()
         pazienti = dao.get_pazienti()
         medici = dao.get_medici()
-        vendite = dao.get_vendite()
+        vendite = dao.get_distinct_vendite()
         dic = {'pazienti': pazienti, 'medici': medici, 'vendite': vendite}
         if request.method == "POST":
             id = request.POST.get('id')
