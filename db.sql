@@ -60,8 +60,32 @@ create or replace type ref_farmacity as object(
 create or replace type ref_farmaciNT as TABLE OF ref_farmacity;
 
 --TABELLE
+create table paziente of pazientety(
+  primary key(cf));
+/
+create table medico of medicoty(
+  primary key(cod));
+/
+create table casa_farmaceutica of casa_farmaceuticaty(
+  primary key(nome, recapito));
+/
+create table prodotto of prodottoty(
+  primary key(id),
+  foreign key(casa_farmaceutica) references casa_farmaceutica);
+/
+create table vendita of venditaty(
+  primary key(id)) nested table prodotti store as prodottint_tab;
+/
+create table prescrizione of prescrizionety(
 
+  primary key(id),
 
+  foreign key(medico) references medico,
+
+  foreign key(vendita) references vendita,
+
+  foreign key(paziente) references paziente) nested TABLE farmaci store as farmacint_tab;  
+/
 
 
 
